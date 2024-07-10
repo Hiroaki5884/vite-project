@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ThreadsList from './ThreadsList.jsx';
 import NewThread from './NewThread.jsx';
+import ThreadPosts from './ThreadPosts.jsx';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ThreadsList />} />
             <Route path="/threads/new" element={<NewThread />} />
+            <Route path="/threads/:thread_id" element={<ThreadPosts />} />
           </Routes>
         </main>
       </div>

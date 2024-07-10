@@ -18,10 +18,13 @@ const ThreadsList = () => {
 
   return (
     <div className="threads-container">
-      <h2>スレッド一覧</h2>
+      <h1>スレッド一覧</h1>
+      <Link to="/threads/new" className="new-thread-button">新規スレッド作成</Link>
       <ul>
         {threads.map(thread => (
-          <li key={thread.id}>{thread.title}</li>
+          <li key={thread.id}>
+            <Link to={`/threads/${thread.id}`}>{thread.title}</Link>
+          </li>
         ))}
       </ul>
     </div>

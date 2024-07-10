@@ -150,3 +150,21 @@ li:hover {
 .new-thread-container button:hover {
   background-color: #45a049;
 }
+
+/* 投稿一覧コンテナのスタイル設定 */
+.posts-container {
+  padding: 10px;
+}
+
+.posts-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.posts-container li {
+  background-color: #f9f9f9;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
