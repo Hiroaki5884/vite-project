@@ -1,20 +1,20 @@
 /* グローバルスタイル設定 */
 body {
-  margin: 0; /* ブラウザのデフォルトのマージンをリセット */
-  font-family: 'Arial', sans-serif; /* フォントをArialに設定 */
+  margin: 0;
+  font-family: 'Arial', sans-serif;
   background-color: #f5f5f5; /* 背景色を薄い灰色に設定 */
   color: #333; /* テキスト色を濃い灰色に設定 */
-  display: flex; /* フレックスボックスレイアウトを使用 */
+  display: flex;
   justify-content: center; /* コンテンツを水平方向に中央揃え */
   align-items: center; /* コンテンツを垂直方向に中央揃え */
-  height: 100%; /* 高さを100%に設定 */
+  min-height: 100vh; /* 高さを100vhに設定 */
   text-align: center; /* テキストを中央揃え */
 }
 
 /* アプリ全体のスタイル設定 */
 .App {
-  width: 90%; /* 幅を90%に設定 */
-  max-width: 800px; /* 最大幅を800pxに設定 */
+  width: 90%;
+  max-width: 1000px; /* 最大幅を1000pxに設定 */
   background-color: #ffffff; /* 背景色を白に設定 */
   border-radius: 10px; /* 角を丸くする */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 影を追加して立体感を出す */
@@ -24,25 +24,55 @@ body {
 /* ヘッダー部分のスタイル設定 */
 .App-header {
   background-color: #4CAF50; /* 背景色を緑に設定 */
-  padding: 20px; /* 内側の余白を20pxに設定 */
+  padding: 10px; /* 内側の余白を10pxに設定 */
   color: white; /* テキスト色を白に設定 */
+  display: flex;
+  flex-direction: column; /* ヘッダーを縦並びに設定 */
+  align-items: center; /* 中央揃え */
 }
 
 /* ヘッダー内のh1要素のスタイル設定 */
 .App-header h1 {
   margin: 0; /* マージンをリセット */
-  font-size: 2.5rem; /* フォントサイズを2.5remに設定 */
+  font-size: 2rem; /* フォントサイズを2remに設定 */
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  padding: 10px; /* 内側の余白を10pxに設定 */
+}
+
+/* ナビゲーションリンクのスタイル設定 */
+nav {
+  display: flex; /* ナビゲーションを横並びに設定 */
+  justify-content: center; /* 中央揃え */
+  flex-wrap: wrap; /* リンクを折り返す */
+  margin-top: 5px;
+  width: 100%;
+}
+
+nav a {
+  margin: 5px 10px;
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  transition: background-color 0.2s;
+}
+
+nav a:hover {
+  background-color: #45a049;
 }
 
 /* メインコンテンツのスタイル設定 */
 main {
-  padding: 20px; /* 内側の余白を20pxに設定 */
+  padding: 10px; /* 内側の余白を10pxに設定 */
 }
 
 /* h1要素のスタイル設定 */
 h1 {
-  font-size: 1.5rem; /* フォントサイズを1.5remに設定 */
-  margin-bottom: 20px; /* 下マージンを20pxに設定 */
+  font-size: 1.2rem; /* フォントサイズを1.2remに設定 */
+  margin-bottom: 15px; /* 下マージンを15pxに設定 */
 }
 
 /* リストのスタイル設定 */
@@ -54,14 +84,69 @@ ul {
 /* リストアイテムのスタイル設定 */
 li {
   background-color: #f9f9f9; /* 背景色を薄い灰色に設定 */
-  margin: 10px 0; /* 上下マージンを10pxに設定 */
-  padding: 15px; /* 内側の余白を15pxに設定 */
+  margin: 5px 0; /* 上下マージンを5pxに設定 */
+  padding: 10px; /* 内側の余白を10pxに設定 */
   border-radius: 5px; /* 角を丸くする */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影を追加して立体感を出す */
   transition: transform 0.2s; /* ホバー時の変化をスムーズにする */
+  overflow: hidden; /* テキストのオーバーフローを防ぐ */
+  white-space: nowrap; /* テキストを1行にする */
+  text-overflow: ellipsis; /* テキストが溢れた場合に省略記号を表示 */
 }
 
 /* リストアイテムのホバー時のスタイル設定 */
 li:hover {
   transform: scale(1.02); /* ホバー時にリストアイテムを拡大 */
+}
+
+/* 新規スレッド作成ボタンのスタイル設定 */
+.new-thread-button {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.new-thread-button:hover {
+  background-color: #45a049;
+}
+
+/* 新規スレッド作成フォームのスタイル設定 */
+.new-thread-container {
+  padding: 10px;
+}
+
+.new-thread-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-thread-container input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%; /* 幅を100%に設定 */
+  max-width: 400px; /* 最大幅を400pxに設定 */
+}
+
+.new-thread-container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-thread-container button:hover {
+  background-color: #45a049;
 }
