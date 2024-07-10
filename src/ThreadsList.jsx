@@ -18,8 +18,7 @@ const ThreadsList = () => {
 
   return (
     <div className="threads-container">
-      <h1>スレッド一覧</h1>
-      <Link to="/threads/new" className="new-thread-button">新規スレッド作成</Link>
+      <h2>スレッド一覧</h2>
       <ul>
         {threads.map(thread => (
           <li key={thread.id}>
